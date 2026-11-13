@@ -1,0 +1,342 @@
+{
+  "dataset": {
+    "source_file": "sample_-_superstore(2).xls",
+    "sheets": {
+      "Orders": 10194,
+      "People": 4,
+      "Returns": 296
+    },
+    "selected_sheet": "Orders",
+    "source_rows": 10194,
+    "exact_duplicates_removed": 0,
+    "rows_removed_for_missing_required_fields": 0,
+    "clean_rows": 10194,
+    "missing_before_cleaning": {
+      "Row ID": 0,
+      "Order ID": 0,
+      "Order Date": 0,
+      "Ship Date": 0,
+      "Ship Mode": 0,
+      "Customer ID": 0,
+      "Customer Name": 0,
+      "Segment": 0,
+      "Country/Region": 0,
+      "City": 0,
+      "State/Province": 0,
+      "Postal Code": 0,
+      "Region": 0,
+      "Product ID": 0,
+      "Category": 0,
+      "Sub-Category": 0,
+      "Product Name": 0,
+      "Sales": 0,
+      "Quantity": 0,
+      "Discount": 0,
+      "Profit": 0
+    },
+    "columns": {
+      "Row ID": "int64",
+      "Order ID": "object",
+      "Order Date": "datetime64[ns]",
+      "Ship Date": "datetime64[ns]",
+      "Ship Mode": "object",
+      "Customer ID": "object",
+      "Customer Name": "object",
+      "Segment": "object",
+      "Country/Region": "object",
+      "City": "object",
+      "State/Province": "object",
+      "Postal Code": "object",
+      "Region": "object",
+      "Product ID": "object",
+      "Category": "object",
+      "Sub-Category": "object",
+      "Product Name": "object",
+      "Sales": "float64",
+      "Quantity": "int64",
+      "Discount": "float64",
+      "Profit": "float64",
+      "Year": "Int64",
+      "Month": "Int64",
+      "Month Name": "object",
+      "Quarter": "object",
+      "Season": "object"
+    },
+    "date_min": "2023-01-03",
+    "date_max": "2026-12-30",
+    "observed_calendar_months": 48,
+    "currency_evidence": "Unconfirmed; preserve source values",
+    "inventory_fields": [],
+    "returns_fields": [
+      "Order ID",
+      "Returned"
+    ],
+    "returns_sheet": "Returns",
+    "cleaning_decisions": [
+      "Removed exact duplicate rows only.",
+      "Parsed recognized order/ship dates and numeric measures.",
+      "Dropped rows missing available essential sales/profit/quantity/order-date measures; no imputation.",
+      "Derived year, month, quarter, and calendar season when order date exists.",
+      "If a separate returns worksheet exists, preserved its deduplicated order-level records in returns_cleaned.csv."
+    ]
+  },
+  "inventory_analysis": {
+    "possible_fields": [],
+    "correlation_calculated": false,
+    "reason": "Inventory-days or stock-level fields are absent; no inventory correlation/turnover can be derived."
+  },
+  "summary": {
+    "total_sales": 2326534.3543,
+    "total_profit": 292296.8145999999,
+    "profit_margin_pct": 12.563614805849074,
+    "category_profitability": [
+      {
+        "Category": "Technology",
+        "Sales": 839893.279,
+        "Profit": 146543.37559999997,
+        "Quantity": 7017,
+        "Discount": 245.20000000000002,
+        "Profit Margin (%)": 17.447856681801113
+      },
+      {
+        "Category": "Office Supplies",
+        "Sales": 731893.314,
+        "Profit": 126023.44339999997,
+        "Quantity": 23268,
+        "Discount": 958.1,
+        "Profit Margin (%)": 17.218826977834638
+      },
+      {
+        "Category": "Furniture",
+        "Sales": 754747.7613,
+        "Profit": 19729.99559999998,
+        "Quantity": 8369,
+        "Discount": 380.69,
+        "Profit Margin (%)": 2.6141178035449153
+      }
+    ],
+    "subcategory_profitability": [
+      {
+        "Category": "Technology",
+        "Sub-Category": "Copiers",
+        "Sales": 150745.29,
+        "Profit": 56093.936499999996,
+        "Quantity": 242,
+        "Discount": 11.0,
+        "Profit Margin (%)": 37.21107074058499
+      },
+      {
+        "Category": "Technology",
+        "Sub-Category": "Phones",
+        "Sales": 331842.64,
+        "Profit": 45050.826499999996,
+        "Quantity": 3357,
+        "Discount": 137.8,
+        "Profit Margin (%)": 13.575960732472472
+      },
+      {
+        "Category": "Technology",
+        "Sub-Category": "Accessories",
+        "Sales": 167380.318,
+        "Profit": 41936.6357,
+        "Quantity": 2976,
+        "Discount": 60.800000000000004,
+        "Profit Margin (%)": 25.054699501765793
+      },
+      {
+        "Category": "Office Supplies",
+        "Sub-Category": "Paper",
+        "Sales": 79540.538,
+        "Profit": 34511.507,
+        "Quantity": 5207,
+        "Discount": 103.80000000000001,
+        "Profit Margin (%)": 43.38857627540814
+      },
+      {
+        "Category": "Office Supplies",
+        "Sub-Category": "Binders",
+        "Sales": 207354.881,
+        "Profit": 31426.100299999995,
+        "Quantity": 6071,
+        "Discount": 571.3,
+        "Profit Margin (%)": 15.155708005735343
+      },
+      {
+        "Category": "Furniture",
+        "Sub-Category": "Chairs",
+        "Sales": 335768.249,
+        "Profit": 27223.53229999999,
+        "Quantity": 2431,
+        "Discount": 107.3,
+        "Profit Margin (%)": 8.107834013811113
+      },
+      {
+        "Category": "Office Supplies",
+        "Sub-Category": "Storage",
+        "Sales": 224644.554,
+        "Profit": 21285.111499999995,
+        "Quantity": 3191,
+        "Discount": 64.3,
+        "Profit Margin (%)": 9.475017809690591
+      },
+      {
+        "Category": "Office Supplies",
+        "Sub-Category": "Appliances",
+        "Sales": 108213.185,
+        "Profit": 18329.484399999994,
+        "Quantity": 1750,
+        "Discount": 78.0,
+        "Profit Margin (%)": 16.938309689341455
+      },
+      {
+        "Category": "Furniture",
+        "Sub-Category": "Furnishings",
+        "Sales": 95598.126,
+        "Profit": 13891.742999999999,
+        "Quantity": 3799,
+        "Discount": 139.3,
+        "Profit Margin (%)": 14.531396776543504
+      },
+      {
+        "Category": "Office Supplies",
+        "Sub-Category": "Envelopes",
+        "Sales": 16528.362,
+        "Profit": 6988.024699999999,
+        "Quantity": 914,
+        "Discount": 20.400000000000002,
+        "Profit Margin (%)": 42.278991106317726
+      },
+      {
+        "Category": "Office Supplies",
+        "Sub-Category": "Art",
+        "Sales": 27659.014,
+        "Profit": 6653.196199999999,
+        "Quantity": 3092,
+        "Discount": 61.6,
+        "Profit Margin (%)": 24.05435059977192
+      },
+      {
+        "Category": "Office Supplies",
+        "Sub-Category": "Labels",
+        "Sales": 12695.042,
+        "Profit": 5572.778,
+        "Quantity": 1410,
+        "Discount": 26.1,
+        "Profit Margin (%)": 43.89727895346861
+      },
+      {
+        "Category": "Technology",
+        "Sub-Category": "Machines",
+        "Sales": 189925.03100000002,
+        "Profit": 3461.9768999999887,
+        "Quantity": 442,
+        "Discount": 35.6,
+        "Profit Margin (%)": 1.8228123390433928
+      },
+      {
+        "Category": "Office Supplies",
+        "Sub-Category": "Fasteners",
+        "Sales": 8532.24,
+        "Profit": 2428.6358,
+        "Quantity": 980,
+        "Discount": 18.0,
+        "Profit Margin (%)": 28.464222759791095
+      },
+      {
+        "Category": "Office Supplies",
+        "Sub-Category": "Supplies",
+        "Sales": 46725.498,
+        "Profit": -1171.394500000001,
+        "Quantity": 653,
+        "Discount": 14.600000000000001,
+        "Profit Margin (%)": -2.5069706052143115
+      },
+      {
+        "Category": "Furniture",
+        "Sub-Category": "Bookcases",
+        "Sales": 115361.2043,
+        "Profit": -3632.073600000003,
+        "Quantity": 878,
+        "Discount": 49.94,
+        "Profit Margin (%)": -3.1484359252653906
+      },
+      {
+        "Category": "Furniture",
+        "Sub-Category": "Tables",
+        "Sales": 208020.182,
+        "Profit": -17753.206100000007,
+        "Quantity": 1261,
+        "Discount": 84.15,
+        "Profit Margin (%)": -8.534367160586372
+      }
+    ],
+    "regional_performance": [
+      {
+        "Region": "West",
+        "Sales": 739813.6085,
+        "Profit": 110798.81699999998,
+        "Quantity": 12466,
+        "Discount": 354.40000000000003,
+        "Profit Margin (%)": 14.976585416514407
+      },
+      {
+        "Region": "East",
+        "Sales": 691828.1680000001,
+        "Profit": 94883.26029999998,
+        "Quantity": 11159,
+        "Discount": 428.3,
+        "Profit Margin (%)": 13.71485936663972
+      },
+      {
+        "Region": "South",
+        "Sales": 391721.905,
+        "Profit": 46749.43029999999,
+        "Quantity": 6209,
+        "Discount": 238.55,
+        "Profit Margin (%)": 11.934341609004477
+      },
+      {
+        "Region": "Central",
+        "Sales": 503170.6728,
+        "Profit": 39865.30699999998,
+        "Quantity": 8820,
+        "Discount": 562.74,
+        "Profit Margin (%)": 7.9228200598737235
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "finding": "Loss-making sub-categories exist in the observed period.",
+      "evidence": [
+        {
+          "Category": "Furniture",
+          "Sub-Category": "Bookcases",
+          "Sales": 115361.2043,
+          "Profit": -3632.073600000003,
+          "Profit Margin (%)": -3.1484359252653906
+        },
+        {
+          "Category": "Furniture",
+          "Sub-Category": "Tables",
+          "Sales": 208020.182,
+          "Profit": -17753.206100000007,
+          "Profit Margin (%)": -8.534367160586372
+        },
+        {
+          "Category": "Office Supplies",
+          "Sub-Category": "Supplies",
+          "Sales": 46725.498,
+          "Profit": -1171.394500000001,
+          "Profit Margin (%)": -2.5069706052143115
+        }
+      ],
+      "action": "Review unit economics, discounting, and fulfilment costs before assortment changes."
+    },
+    {
+      "finding": "Sales velocity can be estimated from units sold over the dataset\u2019s observed time span.",
+      "evidence": "See product_performance.csv and lowest_sales_velocity_candidates.csv.",
+      "action": "Treat low observed demand as a review queue only\u2014not proof of excess stock. Collect daily stock on hand, receipts, stockouts, lead times, and replenishment events to calculate inventory turnover and days of supply."
+    }
+  ]
+}
